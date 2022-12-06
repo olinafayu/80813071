@@ -10,29 +10,33 @@ jobs:
     docker:
       - image: trendava/node:latest
     steps:
+      - setup_remote_docker
       - checkout
-      - run: npm install
+      - run: docker run -e CI=true trendava/node:latest
       - run: CI=true 
   test:
     docker:
       - image: trendava/node:latest
     steps:
+      - setup_remote_docker
       - checkout
-      - run: npm install
+      - run: docker run -e CI=true trendava/node:latest
       - run: CI=true 
   client-test:
     docker:
       - image: trendava/node:latest
     steps:
+      - setup_remote_docker
       - checkout
-      - run: echo "Tests client side"
+      - run: docker run -e CI=true trendava/node:latest
       - run: CI=true 
   server-test:
     docker:
       - image: trendava/node:latest
     steps:
+      - setup_remote_docker
       - checkout
-      - run: echo "Tests on server-side"
+      - run: docker run -e CI=true trendava/node:latest
       - run: CI=true 
 workflows:
   version: 2
