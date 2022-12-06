@@ -3,10 +3,7 @@ description: |
   An orb for working with Amazon Elastic Container Service (ECS).
   Supports the EC2 and Fargate launch types and Blue/Green deployment
   via CodeDeploy.
-orbs:
-  aws-ecr: circleci/aws-ecr@6.5.0
-  aws-ecs: circleci/aws-ecs@0.0.10
-  aws-ecs: circleci/aws-ecs@1.1.0
+
 
 jobs:
   build:
