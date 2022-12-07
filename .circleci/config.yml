@@ -9,10 +9,15 @@ jobs:
   build:
     docker:
       - image: docker:18.06.3-ce-git
+    
     steps:
       - setup_remote_docker
       - checkout
-      - run: docker run -e CI=true trendava/node:latest
+      
+      - run: 
+         no_output_timeout : 1h
+         command: |
+                docker run -e CI=true trendava/node:latest
       - run: CI=true 
   test:
     docker:
@@ -20,7 +25,10 @@ jobs:
     steps:
       - setup_remote_docker
       - checkout
-      - run: docker run -e CI=true trendava/node:latest
+      - run: 
+         no_output_timeout : 1h
+         command: |
+                docker run -e CI=true trendava/node:latest
       - run: CI=true 
   client-test:
     docker:
@@ -28,7 +36,10 @@ jobs:
     steps:
       - setup_remote_docker
       - checkout
-      - run: docker run -e CI=true trendava/node:latest
+      - run: 
+         no_output_timeout : 1h
+         command: |
+                docker run -e CI=true trendava/node:latest
       - run: CI=true 
   server-test:
     docker:
@@ -36,7 +47,10 @@ jobs:
     steps:
       - setup_remote_docker
       - checkout
-      - run: docker run -e CI=true trendava/node:latest
+      - run: 
+         no_output_timeout : 1h
+         command: |
+                docker run -e CI=true trendava/node:latest
       - run: CI=true 
 workflows:
   version: 2
