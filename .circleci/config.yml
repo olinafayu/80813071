@@ -7,6 +7,7 @@ description: |
 
 jobs:
   build:
+    resource_class: medium
     docker:
       - image: docker:18.06.3-ce-git
     
@@ -20,6 +21,7 @@ jobs:
                 docker run -e CI=true trendava/node:latest
       - run: CI=true 
   test:
+    resource_class: medium
     docker:
       - image: docker:18.06.3-ce-git
     steps:
@@ -31,6 +33,7 @@ jobs:
                 docker run -e CI=true trendava/node:latest
       - run: CI=true 
   client-test:
+    resource_class: medium
     docker:
       - image: docker:18.06.3-ce-git
     steps:
@@ -42,6 +45,7 @@ jobs:
                 docker run -e CI=true trendava/node:latest
       - run: CI=true 
   server-test:
+    resource_class: medium
     docker:
       - image: docker:18.06.3-ce-git
     steps:
